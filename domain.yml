@@ -1,0 +1,37 @@
+forms:
+  - report_form
+actions:
+  - action_hello_world
+intents:
+  - greet
+  - goodbye
+  - query
+entities:
+  - ticket
+  - team
+  - state
+responses:
+  utter_greet:
+  - text: "Hey! Enter your query"
+
+  utter_goodbye:
+  - text: "Bye"
+  utter_ask_ticket:
+  - text: "Enter ticket"
+  utter_ask_team:
+  - text: "Enter team"
+  utter_ask_state:
+  - text: "Enter state"
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+slots:
+  ticket:
+    type: unfeaturized
+  team:
+    type: unfeaturized
+  state:
+    type: unfeaturized
