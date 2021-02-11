@@ -16,12 +16,13 @@ responses:
   - text: Select date
   utter_ask_state:
   - buttons:
-    - payload: /query{“state”:“committed”}
-      title: Committed
-    - payload: /query{“state”:“terminated”}
-      title: Terminated
-    - payload: /query{“state”:“aborted”}
-      title: Aborted
+    - title: Committed
+      payload: /query{"state":"commited"}
+    - title: Terminated
+      payload: /query{"state":"terminated"}
+    - title: Aborted
+      payload: /query{"state":"aborted"}
+
     text: Select Transaction State
   utter_ask_trans_id:
   - text: Enter trans_id
