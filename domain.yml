@@ -1,37 +1,43 @@
-forms:
-  - report_form
 actions:
-  - action_hello_world
-intents:
-  - greet
-  - goodbye
-  - query
+- action_app_report
+- utter_greet
 entities:
-  - ticket
-  - team
-  - state
+- date
+- state
+- trans_id
+forms:
+- app_form
+intents:
+- query
+- greet
+- goodbye
 responses:
-  utter_greet:
-  - text: "Hey! Enter your query"
-
-  utter_goodbye:
-  - text: "Bye"
-  utter_ask_ticket:
-  - text: "Enter ticket"
-  utter_ask_team:
-  - text: "Enter team"
+  utter_ask_date:
+  - text: Select date
   utter_ask_state:
-  - text: "Enter state"
-
-
+  - buttons:
+    - payload: /query{“state”:“committed”}
+      title: Committed
+    - payload: /query{“state”:“terminated”}
+      title: Terminated
+    - payload: /query{“state”:“aborted”}
+      title: Aborted
+    text: Select Transaction State
+  utter_ask_trans_id:
+  - text: Enter trans_id
+  utter_goodbye:
+  - text: Bye
+  utter_greet:
+  - text: Hey! Enter your query
 session_config:
-  session_expiration_time: 60
   carry_over_slots_to_new_session: true
-
+  session_expiration_time: 60
 slots:
-  ticket:
+  date:
     type: unfeaturized
-  team:
+  requested_slot:
     type: unfeaturized
   state:
+    type: unfeaturized
+  trans_id:
     type: unfeaturized
